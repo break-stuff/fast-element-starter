@@ -8,11 +8,11 @@ const template = html<MyCounter>`
     </div>
   
     <span class="controls">
-      <button class="control" @click="${x => x.decrement()}" aria-label="decrease">
+      <button class="control-decrease" @click="${x => x.decrement()}" aria-label="decrease">
         -
       </button>
       <span class="count">${x => x.value}</span>
-      <button class="control" @click="${x => x.increment()}" aria-label="increase">
+      <button class="control-increase" @click="${x => x.increment()}" aria-label="increase">
         +
       </button>
     </span>

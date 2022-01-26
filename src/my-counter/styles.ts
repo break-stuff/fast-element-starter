@@ -2,6 +2,12 @@ import { css } from '@microsoft/fast-element'
 
 export const styles = css`
   :host {
+    --button-fill-color: #bec4d3;
+    --button-text-color: black;
+    --button-border-radius: 10rem;
+    --border-color: black;
+    --border-size: 1px;
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -12,23 +18,31 @@ export const styles = css`
   .controls {
     display: flex;
     justify-content: space-between;
-    border-radius: 50%;
-    border: solid 1px black;
-    border-radius: 10rem;
     display: inline-flex;
-    overflow: hidden;
     margin-bottom: 1rem;
   }
 
-  .control {
+  .control-decrease {
     font-size: 1.5rem;
     padding: 0.75rem 1rem;
-    margin: -1px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .control-increase {
+    font-size: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 
   .count {
     font-size: 1.5rem;
-    padding: 0.75rem 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    width: 100%;
+    border: solid var(--border-size) var(--border-color);
+    margin: 0 calc(var(--border-size)*-1);
   }
 
   .reset {
@@ -38,5 +52,9 @@ export const styles = css`
   button {
     line-height: 1;
     cursor: pointer;
+    border: solid var(--border-size) var(--border-color);
+    border-radius: var(--button-border-radius);
+    color: var(--button-text-color);
+    background-color: var(--button-fill-color);
   }
 `;
