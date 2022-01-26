@@ -2,47 +2,34 @@
     "name": "fast-element-starter",
     "version": "1.0.0",
     "description": "A fast-element starter project",
-    "main": "dist/cjs/index.js",
-    "module": "dist/esm/index.js",
+    "main": "dist/index.es.js",
+    "module": "dist/index.umd.js",
+    "exports": {
+        ".": {
+            "import": "./index.es.js",
+            "require": "./index.umd.js"
+        }
+    },
     "scripts": {
         "clean": "rimraf dist",
-        "build": "npm run clean && rollup -c",
-        "build:watch": "npm run clean && rollup -cw",
-        "serve": "concurrently \"npm:build:watch\" \"wait-on ./dist/esm/index.js && web-dev-server --open --watch\"",
-        "server": "web-dev-server",
+        "dev": "vite --open",
+        "build": "npm run clean && vite build && tsc --emitDeclarationOnly",
         "test": "web-test-runner",
-        "test:watch": "web-test-runner --watch",
-        "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "test:watch": "web-test-runner --watch"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@babel/core": "^7.16.12",
-        "@esm-bundle/chai": "^4.3.4",
-        "@open-wc/building-rollup": "^2.0.1",
+        "@esm-bundle/chai": "^4.3.4-fix.0",
         "@open-wc/testing": "^3.0.3",
-        "@rollup/plugin-commonjs": "^21.0.1",
-        "@rollup/plugin-node-resolve": "^13.1.3",
-        "@rollup/plugin-typescript": "^8.3.0",
-        "@web/dev-server-rollup": "^0.3.14",
-        "@web/test-runner": "^0.13.25",
+        "@web/dev-server": "^0.1.29",
+        "@web/dev-server-esbuild": "^0.2.16",
+        "@web/test-runner": "^0.13.26",
         "@web/test-runner-playwright": "^0.8.8",
-        "babel-loader": "^8.2.3",
-        "concurrently": "^7.0.0",
-        "deepmerge": "^4.2.2",
-        "es-dev-server": "^2.1.0",
         "rimraf": "^3.0.2",
-        "rollup": "^2.66.1",
-        "rollup-plugin-dts": "^4.1.0",
-        "rollup-plugin-livereload": "^2.0.5",
-        "rollup-plugin-peer-deps-external": "^2.2.4",
-        "rollup-plugin-terser": "^7.0.2",
-        "rollup-plugin-typescript2": "^0.31.1",
         "tslib": "^2.3.1",
         "typescript": "^4.5.5",
-        "@web/dev-server-esbuild": "^0.2.16",
-        "wait-on": "^6.0.0"
+        "vite": "^2.7.13"
     },
     "dependencies": {
         "@microsoft/fast-element": "^1.7.0"
