@@ -1,25 +1,26 @@
-import { FASTElement, html, attr, customElement } from '@microsoft/fast-element'
-import type { ViewTemplate } from '@microsoft/fast-element'
+import { FASTElement, html, attr, customElement } from '@microsoft/fast-element';
+import { styles } from './styles';
 
-import { styles } from './styles'
-
-const template: ViewTemplate = html<MyCounter>`
-  <div class="counter__current">
-    Count: ${x => x.count}
-  </div>
-
-  <button @click="${x => x.increment()}" title="increment">
-    Increment
-  </button>
-
-  <button @click="${x => x.decrement()}" title="decrement">
-    Decrement
-  </button>
-
-  <button @click="${x => x.reset()}" title="reset">
-    Reset
-  </button>
-`
+const template = html<MyCounter>`
+  <template>
+    <div class="total-label">
+      <slot></slot>:
+    </div>
+  
+    <span class="controls">
+      <button class="control" @click="${x => x.decrement()}" aria-label="decrease">
+        -
+      </button>
+      <span class="count">${x => x.value}</span>
+      <button class="control" @click="${x => x.increment()}" aria-label="increase">
+        +
+      </button>
+    </span>
+    <button class="reset" @click="${x => x.reset()}">
+      Reset
+    </button>
+  </template>
+`;
 
 @customElement({
   name: 'my-counter',
@@ -27,23 +28,24 @@ const template: ViewTemplate = html<MyCounter>`
   styles
 })
 export class MyCounter extends FASTElement {
-  @attr count: number = 0
+  @attr value: number = 0;
 
-  increment (): void {
-    this.count += 1
+  increment(): void {
+    this.value += 1;
+    this.sendUpdate();
   }
 
-  decrement (): void {
-    this.count -= 1
+  decrement(): void {
+    this.value -= 1;
+    this.sendUpdate();
   }
 
-  reset (): void {
-    this.count = 0
+  reset(): void {
+    this.value = 0;
+    this.sendUpdate();
   }
-}
 
-declare global {
-  interface HTMLElementTagNameMap {
-    'my-counter': MyCounter
+  private sendUpdate() {
+    this.$emit('updated', this.value);
   }
 }

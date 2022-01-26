@@ -10,7 +10,7 @@ describe('MyCounter', () => {
     const el = await fixture<MyCounter>(`<${tag}></${tag}>`)
     const button = el.shadowRoot?.querySelector('button[title="increment"]') as HTMLButtonElement
     button.click()
-    assert.equal(el.count, 1)
+    assert.equal(el.value, 1)
     await assert.isAccessible(el)
   })
 
@@ -19,15 +19,15 @@ describe('MyCounter', () => {
     const button = el.shadowRoot?.querySelector('button[title="decrement"]') as HTMLButtonElement
     button.click()
 
-    assert.equal(el.count, -1)
+    assert.equal(el.value, -1)
   })
 
   it('resets to 0', async () => {
     const el = await fixture<MyCounter>(`<${tag} count="5"></${tag}>`)
-    assert.equal(el.count, 5)
+    assert.equal(el.value, 5)
 
     const button = el.shadowRoot?.querySelector('button[title="reset"]') as HTMLButtonElement
     button.click()
-    assert.equal(el.count, 0)
+    assert.equal(el.value, 0)
   })
 })
