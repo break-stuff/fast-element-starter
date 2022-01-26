@@ -1,8 +1,9 @@
 import { playwrightLauncher } from '@web/test-runner-playwright';
 import { esbuildPlugin } from '@web/dev-server-esbuild';
 
+
 export default ({
-  files: 'src/**/*.test.ts',
+  files: 'src/**/*tests.ts',
   browsers: [
     playwrightLauncher({ product: 'chromium' }),
     playwrightLauncher({ product: 'webkit' }),
@@ -10,7 +11,6 @@ export default ({
   ],
   nodeResolve: true,
   rootDir: '.',
-
   plugins: [
     esbuildPlugin({ ts: true })
   ]
