@@ -87,3 +87,6 @@ lerna-debug.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Custom Elements Manifest
+custom-elements.json
