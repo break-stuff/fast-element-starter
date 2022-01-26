@@ -31,12 +31,14 @@ export class MyCounter extends FASTElement {
   @attr value: number = 0;
 
   increment(): void {
-    this.value += 1;
+    this.resetNonNumbers();
+    this.value++;
     this.sendUpdate();
   }
 
   decrement(): void {
-    this.value -= 1;
+    this.resetNonNumbers();
+    this.value--;
     this.sendUpdate();
   }
 
@@ -47,5 +49,10 @@ export class MyCounter extends FASTElement {
 
   private sendUpdate() {
     this.$emit('updated', this.value);
+  }
+
+  private resetNonNumbers() {
+    if(isNaN(this.value))
+    this.value = 0;
   }
 }
