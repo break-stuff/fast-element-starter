@@ -3,8 +3,11 @@ module.exports = {
     "../src/**/*stories.@(js|jsx|ts|tsx|mdx)"
   ],
   "addons": [
+    '@storybook/addon-a11y',
+    '@storybook/addon-actions',
+    '@storybook/addon-controls',
+    "@storybook/addon-essentials",
     "@storybook/addon-links",
-    "@storybook/addon-essentials"
   ],
   "framework": "@storybook/web-components",
   "core": {

@@ -25,8 +25,8 @@
   "exclude": [
     "dist",
     "node_modules",
-    "**/*tests.ts",
-    "src/**/styles.ts",
+    "**/*.tests.ts",
+    "src/**/*.styles.ts",
     "src/**/*.stories.tsx"
   ]
 }

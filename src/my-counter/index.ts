@@ -22,6 +22,24 @@ const template = html<MyCounter>`
   </template>
 `;
 
+/**
+ * @tag my-counter
+ * 
+ * @summary This is a simple Storybook Button
+ * 
+ * @attr {string} value - starting value displayed in component
+ * 
+ * @slot - The label displayed at the top of the component
+ *
+ * @cssprop [--button-fill-color="#40527c"] - Controls the color of the buttons
+ * @cssprop [--button-text-color="white"] - Controls the color of the buttons
+ * @cssprop [--button-border-radius=10rem] - Controls the color of the buttons
+ * @cssprop [--border-color=#40527c] - Controls the color of the buttons
+ * @cssprop [--border-size=2px] - Controls the color of the buttons
+ *
+ * @event {CustomEvent} updated - Emitted when the value changes
+ *
+ */
 @customElement({
   name: 'my-counter',
   template,
