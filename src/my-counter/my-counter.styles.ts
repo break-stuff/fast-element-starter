@@ -2,11 +2,11 @@ import { css } from '@microsoft/fast-element'
 
 export const styles = css`
   :host {
-    --button-fill-color: #bec4d3;
-    --button-text-color: black;
+    --button-fill-color: #40527c;
+    --button-text-color: white;
     --button-border-radius: 10rem;
-    --border-color: black;
-    --border-size: 1px;
+    --border-color: #40527c;
+    --border-size: 2px;
 
     display: flex;
     flex-direction: column;

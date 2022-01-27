@@ -1,5 +1,5 @@
 import { FASTElement, html, attr, customElement } from '@microsoft/fast-element';
-import { styles } from './styles';
+import { styles } from './my-counter.styles';
 
 const template = html<MyCounter>`
   <template>
