@@ -11,7 +11,7 @@ const template = html<MyCounter>`
       <button class="control-decrease" @click="${x => x.decrement()}" aria-label="decrease">
         -
       </button>
-      <span class="count">${x => x.value}</span>
+      <span class="count" part="count">${x => x.value}</span>
       <button class="control-increase" @click="${x => x.increment()}" aria-label="increase">
         +
       </button>
@@ -27,15 +27,17 @@ const template = html<MyCounter>`
  * 
  * @summary This is a simple Storybook Button
  * 
- * @attr {string} value - starting value displayed in component
+ * @attr {number} value - starting value displayed in component
  * 
- * @slot - The label displayed at the top of the component
+ * @slot default - The label displayed at the top of the component
+ * 
+ * @csspart count - Shadow part for styling the "count"
  *
- * @cssprop [--button-fill-color="#40527c"] - Controls the color of the buttons
- * @cssprop [--button-text-color="white"] - Controls the color of the buttons
- * @cssprop [--button-border-radius=10rem] - Controls the color of the buttons
- * @cssprop [--border-color=#40527c] - Controls the color of the buttons
- * @cssprop [--border-size=2px] - Controls the color of the buttons
+ * @cssprop [--button-fill-color=#40527c] - Controls the color of the buttons
+ * @cssprop [--button-text-color=white] - Controls the color of the button text
+ * @cssprop [--button-border-radius=10rem] - Controls the border-radius of the buttons
+ * @cssprop [--border-color=#40527c] - Controls the border colors
+ * @cssprop [--border-size=2px] - Controls the border sizes
  *
  * @event {CustomEvent} updated - Emitted when the value changes
  *
