@@ -1,26 +1,6 @@
 import { FASTElement, html, attr, customElement } from '@microsoft/fast-element';
+import { template } from './my-component.template';
 import { styles } from './my-counter.styles';
-
-const template = html<MyCounter>`
-  <template>
-    <div class="total-label">
-      <slot></slot>:
-    </div>
-  
-    <span class="controls">
-      <button class="control-decrease" @click="${x => x.decrement()}" aria-label="decrease">
-        -
-      </button>
-      <span class="count" part="count">${x => x.value}</span>
-      <button class="control-increase" @click="${x => x.increment()}" aria-label="increase">
-        +
-      </button>
-    </span>
-    <button class="reset" @click="${x => x.reset()}">
-      Reset
-    </button>
-  </template>
-`;
 
 /**
  * @tag my-counter
