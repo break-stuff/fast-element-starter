@@ -27,7 +27,7 @@
         "manifest": "cem analyze --fast --globs \"./src/**/index.ts\""
     },
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "devDependencies": {
         "@babel/core": "^7.16.12",
         "@custom-elements-manifest/analyzer": "^0.5.7",
