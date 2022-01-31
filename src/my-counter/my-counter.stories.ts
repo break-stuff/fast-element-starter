@@ -56,8 +56,8 @@ export const CustomStyles: any = Template.bind({});
 CustomStyles.args = {
     ['--button-fill-color']: 'pink',
     ['--button-text-color']: 'black',
-    ['--button-border-radius']: '2rem',
+    ['--button-border-radius']: '1rem',
     ['--border-color']: 'brown',
     ['--border-size']: '5px',
-    count: 'text-decoration:underline; font-weight:bold; color:#b53b00;'
+    count: 'text-decoration:underline; font-weight:bold; color:#083cff;'
 };
