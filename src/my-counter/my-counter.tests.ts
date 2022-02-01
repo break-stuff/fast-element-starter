@@ -14,7 +14,7 @@ describe('MyCounter', () => {
 
     // Assert
     assert.equal(el.value, 1);
-    await assert.isAccessible(el);
+    assert.isAccessible(el);
   });
 
   it('decreases the count on button click', async () => {

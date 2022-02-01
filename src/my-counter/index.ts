@@ -1,4 +1,4 @@
-import { FASTElement, html, attr, customElement } from '@microsoft/fast-element';
+import { FASTElement, attr, customElement } from '@microsoft/fast-element';
 import { template } from './my-component.template';
 import { styles } from './my-counter.styles';
 
