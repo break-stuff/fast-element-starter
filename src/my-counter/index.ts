@@ -47,7 +47,8 @@ export class MyCounter extends FASTElement {
   }
 
   private resetNonNumbers() {
-    if(isNaN(this.value))
-    this.value = 0;
+    if (isNaN(this.value)) {
+      this.value = 0;
+    }
   }
 }
