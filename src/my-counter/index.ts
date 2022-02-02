@@ -42,11 +42,6 @@ export class MyCounter extends FASTElement {
     this.sendUpdate();
   }
 
-  reset(): void {
-    this.value = 0;
-    this.sendUpdate();
-  }
-
   private sendUpdate() {
     this.$emit('updated', this.value);
   }

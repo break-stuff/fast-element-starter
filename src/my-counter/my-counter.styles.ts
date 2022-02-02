@@ -45,10 +45,6 @@ export const styles = css`
     margin: 0 calc(var(--border-size)*-1);
   }
 
-  .reset {
-    padding: 0.75rem;
-  }
-
   button {
     line-height: 1;
     cursor: pointer;

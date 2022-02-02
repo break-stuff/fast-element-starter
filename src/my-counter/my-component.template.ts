@@ -16,8 +16,5 @@ export const template = html<MyCounter>`
       +
     </button>
   </span>
-  <button class="reset" @click="${x => x.reset()}">
-    Reset
-  </button>
 </template>
 `;
