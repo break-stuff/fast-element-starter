@@ -11,4 +11,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  options: {
+    enableShortcuts: false,
+  }
 }

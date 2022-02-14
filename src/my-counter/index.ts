@@ -5,7 +5,7 @@ import { styles } from './my-counter.styles';
 /**
  * @tag my-counter
  * 
- * @summary This is a simple Storybook Button
+ * @summary This is a simple counter component
  * 
  * @attr {number} value - starting value displayed in component
  * 
