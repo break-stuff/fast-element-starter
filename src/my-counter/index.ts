@@ -4,13 +4,13 @@ import { styles } from './my-counter.styles';
 
 /**
  * @tag my-counter
- * 
+ *
  * @summary This is a simple counter component
- * 
+ *
  * @attr {number} value - starting value displayed in component
- * 
+ *
  * @slot default - The label displayed at the top of the component
- * 
+ *
  * @csspart count - Shadow part for styling the "count"
  *
  * @cssprop [--button-fill-color=#40527c] - Controls the color of the buttons
@@ -25,10 +25,10 @@ import { styles } from './my-counter.styles';
 @customElement({
   name: 'my-counter',
   template,
-  styles
+  styles,
 })
 export class MyCounter extends FASTElement {
-  @attr value: number = 0;
+  @attr value = 0;
 
   increment(): void {
     this.resetNonNumbers();

@@ -1,4 +1,4 @@
-import { css } from '@microsoft/fast-element'
+import { css } from '@microsoft/fast-element';
 
 export const styles = css`
   :host {
@@ -42,7 +42,7 @@ export const styles = css`
     padding-bottom: 0.75rem;
     width: 100%;
     border: solid var(--border-size) var(--border-color);
-    margin: 0 calc(var(--border-size)*-1);
+    margin: 0 calc(var(--border-size) * -1);
   }
 
   button {

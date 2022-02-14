@@ -7,7 +7,9 @@ describe('MyCounter', () => {
   it('increases the count on button click', async () => {
     // Arrange
     const el = await fixture<MyCounter>(`<${tag}></${tag}>`);
-    const button = el.shadowRoot?.querySelector('.control-increase') as HTMLButtonElement;
+    const button = el.shadowRoot?.querySelector(
+      '.control-increase'
+    ) as HTMLButtonElement;
 
     // Act
     button.click();
@@ -20,7 +22,9 @@ describe('MyCounter', () => {
   it('decreases the count on button click', async () => {
     // Arrange
     const el = await fixture<MyCounter>(`<${tag}></${tag}>`);
-    const button = el.shadowRoot?.querySelector('.control-decrease') as HTMLButtonElement;
+    const button = el.shadowRoot?.querySelector(
+      '.control-decrease'
+    ) as HTMLButtonElement;
 
     // Act
     button.click();

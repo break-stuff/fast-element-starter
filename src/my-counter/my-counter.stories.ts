@@ -1,23 +1,23 @@
-import "./index";
+import './index';
 
 // More on default export: https://storybook.js.org/docs/web-components/writing-stories/introduction#default-export
 export default {
-    title: 'Example/My Counter',
-    component: 'my-counter',
-    args: {
-        value: 0,
-        default: "My Count",
-        ['--button-fill-color']: '#40527c',
-        ['--button-text-color']: 'white',
-        ['--button-border-radius']: '10rem',
-        ['--border-color']: '#40527c',
-        ['--border-size']: '2px',
+  title: 'Example/My Counter',
+  component: 'my-counter',
+  args: {
+    value: 0,
+    default: 'My Count',
+    ['--button-fill-color']: '#40527c',
+    ['--button-text-color']: 'white',
+    ['--button-border-radius']: '10rem',
+    ['--border-color']: '#40527c',
+    ['--border-size']: '2px',
+  },
+  parameters: {
+    actions: {
+      handles: ['updated'],
     },
-    parameters: {
-        actions: {
-            handles: ['updated'],
-        },
-    },
+  },
 };
 
 // More on component templates: https://storybook.js.org/docs/web-components/writing-stories/introduction#using-args
@@ -44,20 +44,20 @@ Default.args = {};
 
 export const PresetValue: any = Template.bind({});
 PresetValue.args = {
-    value: 6
+  value: 6,
 };
 
 export const BadInput: any = Template.bind({});
 BadInput.args = {
-    value: 'Test'
+  value: 'Test',
 };
 
 export const CustomStyles: any = Template.bind({});
 CustomStyles.args = {
-    ['--button-fill-color']: 'pink',
-    ['--button-text-color']: 'black',
-    ['--button-border-radius']: '1rem',
-    ['--border-color']: 'brown',
-    ['--border-size']: '5px',
-    count: 'text-decoration:underline; font-weight:bold; color:#083cff;'
+  ['--button-fill-color']: 'pink',
+  ['--button-text-color']: 'black',
+  ['--button-border-radius']: '1rem',
+  ['--border-color']: 'brown',
+  ['--border-size']: '5px',
+  count: 'text-decoration:underline; font-weight:bold; color:#083cff;',
 };
